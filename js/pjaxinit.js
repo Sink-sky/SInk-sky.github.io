@@ -1,0 +1,1 @@
+$(document).pjax('a', '.pjax-data', {fragment:'.pjax-data', timeout:2000})

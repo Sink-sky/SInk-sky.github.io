@@ -1,0 +1,82 @@
+.showblock {
+  color: #555;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+}
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1%;
+  padding-bottom: 6px;
+  padding-top: 4px;
+  background-color: #fafafa;
+}
+blockquote>p {
+  margin-bottom: 0px;
+}
+pre {
+  border-radius: 5px;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background-image: linear-gradient(to right, rgba(1,1,1,0.4), rgba(1,1,1,0.4)), url("https://pic.superbed.cn/item/5cc314e33a213b0417065b1f");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-size: cover, cover;
+}
+#words {
+  font-size: 90px;
+  color: #eee;
+  text-align: center;
+  margin-top: 10%;
+}
+#siteinfo {
+  text-align: center;
+}
+#siteinfo>span {
+  font-size: 18px;
+  color: #eee;
+  margin-top: 5%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.page-nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+.page-nav>* {
+  position: relative;
+  display: inline;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+.page-nav>*:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  text-decoration: none;
+}
+.page-nav>.prev {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.page-nav>.next {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.page-nav>.current {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
