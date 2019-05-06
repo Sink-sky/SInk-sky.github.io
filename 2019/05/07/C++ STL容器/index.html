@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+	<title>Sinksky</title>
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.6/styles/kimbie.light.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/pjaxinit.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js@3.4.1/dist/hotkeys.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+</head>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark">
+	<ul id="mainnavbar" class="navbar-nav">
+		<a href="/" class="navbar-brand">Sinksky</a>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/categories">分类</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/tags">标签</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/archives">归档</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/about">关于</a>
+			</li>
+		
+	</ul>
+</nav>
+	<main class="pjax-data">
+		<div class="animated fadeInDown">
+			<div class="container animated fadeIn">
+	<div class="row">
+		<div class="col-md-10 offset-1 showblock">
+			<div class="post-header">
+	<h1 style="text-align: center;">C++ STL容器</h1>
+<!-- 		 -->
+		
+			
+				<div style="font-weight: bold;">分类:</div>
+				
+				
+						
+						<a href="/categories/Cpp" class="badge badge-light" style="font-weight: 400;font-size: 90%;">Cpp</a>>
+				
+				<span class="badge badge-light" style="font-weight: 400;font-size: 90%;">C++ STL容器</span>
+			
+			
+				<div style="font-weight: bold;">标签:</div>
+				 
+					<a href="/tags/C-" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">C++</a>
+				 
+					<a href="/tags/STL" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">STL</a>
+				
+			
+		
+
+	
+</div>
+<hr style="border-color: #b3d7ff;">
+<div class="post-content">
+	<p><strong>参考文章:</strong></p>
+<ul>
+<li><a href="https://www.cnblogs.com/dyllove98/p/3214898.html" target="_blank" rel="noopener">C++顺序性容器、关联性容器与容器适配器</a></li>
+<li><a href="https://zh.cppreference.com/w/cpp" target="_blank" rel="noopener">C++参考手册</a></li>
+</ul>
+<hr>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>顺序性容器</strong></p>
+<p><em>vector,deque,list</em></p>
+<p>物理与逻辑上线性排放,线性结构.</p>
+<p><strong>关联式容器</strong></p>
+<p><em>set,map,multiset,multimap</em> </p>
+<p>kv,树状结构.</p>
+<p><strong>容器适配器</strong></p>
+<p><em>stack,queue,priority_queue</em></p>
+<p>包装了容器,发生了接口转换,是容器的容器.</p>
+<h2 id="顺序性容器"><a href="#顺序性容器" class="headerlink" title="顺序性容器"></a>顺序性容器</h2><p><strong>vector 向量</strong> 连续内存块</p>
+<p><strong>deque 双向队列</strong> 多个连续内存块</p>
+<p><strong>list 双向链表</strong> 分开的元素内存块</p>
+<p>共有的一些函数</p>
+<pre><code class="c++">//相似的构造方法
+list&lt;int&gt; (3,5);//三个节点为5
+//相似的重分配方法
+assign();
+//相似的迭代方法
+begin();end();rbegin();rend();
+//相似的取值方法
+front();end();
+//相似的前后增删方法(vector只有后增删)
+push_back();pop_back();
+push_front();pop_front();
+//相似的插入方法
+insert();
+//相似的查空清空方法
+empty();clear();erase();
+//相似的大小查询方法
+size();resize();
+//vector,deque支持随机访问
+//链表结合 
+//std::list::splice
+splice();
+L1.splice(L1,L2);//位置+结合后清空链表
+</code></pre>
+<h2 id="关联式容器"><a href="#关联式容器" class="headerlink" title="关联式容器"></a>关联式容器</h2><p><strong>均采用红黑树(高效的平衡二叉搜索树)实现</strong></p>
+<p><strong>set,map 无重复元素</strong></p>
+<p><strong>multiset,multimap 可重复元素</strong></p>
+<p><strong>unordered_set,unordered_map 哈希表(无序哈希)</strong></p>
+<p>共有的一些函数</p>
+<pre><code class="c++">//相似的迭代方法(哈希表无反向迭代器)
+begin();end();rbegin();rend();
+//相似的插入方法
+insert();
+//相似的查找方法
+find();
+//相似的查空清空方法
+empty();clear();erase();
+//相似的大小查询方法
+size();
+//相似的查找键出现次数方法
+count();
+//第三个模板参数可以自定义排序规则,需要传入一个仿函数.
+//bool operator()(const YouType &amp; a,const YouType &amp; b)
+//C++对struct做了很大的扩充,以至于struct与class最大区别就只有访问控制了.
+//map重载了[],可以用map[key]=value赋值,multimap无.
+//哈希表可以修改哈希函数
+//C++ std::hash仿函数
+//std::size_t h1 = std::hash&lt;std::string&gt;{}(s.first_name);
+//std::size_t operator()(S const&amp; s)
+</code></pre>
+<h2 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h2><p><strong>默认情况下,stack,queue采用deque实现,而priority_queue采用vector实现</strong></p>
+<pre><code class="c++">//容器适配器无clear()方法,因为底层是采用其他容器来实现.
+//要clear一个容器适配器的最好方法就是与一个empty容器适配器swap
+//stack可以修改实现实现更好性能
+stack&lt;int,vector&lt;int&gt;&gt;;
+//相似的增减方法
+push();pop();
+//相似的元素访问方法
+front();back();
+//相似判空方法
+empty();
+//相似大小方法
+size();
+//可以自定义优先队列的优先函数
+template&lt;
+    class T,
+    class Container = std::vector&lt;T&gt;,
+    class Compare = std::less&lt;typename Container::value_type&gt;
+&gt; class priority_queue;
+</code></pre>
+
+</div>
+<hr style="border-color: #b3d7ff">
+<div class="post-data" style="text-align: right;"> 
+	最后更新于 2019-05-07
+</div>
+
+		</div>
+	</div>
+</div>
+		</div>
+		
+			<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content" style="border-radius: 15px">
+						<div class="modal-body">
+								<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序性容器"><span class="toc-text">顺序性容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关联式容器"><span class="toc-text">关联式容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器适配器"><span class="toc-text">容器适配器</span></a></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				hotkeys("q", function(event,handler){
+					if($(".modal-backdrop").length > 0){
+						$("#exampleModal").modal('hide');
+					}else{
+						$("#exampleModal").modal();
+					}
+				})
+			</script>
+		
+	</main>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/33.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<script>
+
+	$(document).ready(function() {
+			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+			hljs.initHighlightingOnLoad();	
+	})
+	$(".pjax-data").on('pjax:end', function() {
+		if($("#words").length > 0){
+			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+		}
+	})
+	$(document).on('pjax:complete', function() {
+		document.querySelectorAll('pre code').forEach((block) => {
+		hljs.highlightBlock(block);
+		});
+	});
+	hotkeys("w", function(event,handler){
+		if($("#live2d-widget").css('display') != 'none'){
+			$("#live2d-widget").css('display','none');
+		}else{
+			$("#live2d-widget").css('display','block');
+		}
+	})
+	
+	
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+	
+	hotkeys("1,2,3,4,5", function(event,handler){
+		if($('.tooltip').length > 0){
+			$('.tooltip').remove();
+		}
+		switch(handler.key){
+			case "1":$("#mainnavbar a:eq(0)").click();break;
+			
+					case "2":$("#mainnavbar a:eq(1)").click();break;
+				
+			
+					case "3":$("#mainnavbar a:eq(2)").click();break;
+				
+			
+					case "4":$("#mainnavbar a:eq(3)").click();break;
+				
+			
+					case "5":$("#mainnavbar a:eq(4)").click();break;
+				
+			
+		}
+	})
+</script>

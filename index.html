@@ -42,31 +42,29 @@
 </nav>
 	<main class="pjax-data">
 		<div class="animated fadeInDown">
-			<div class="container animated fadeIn">
-	<div class="row">
-		<div class="col-md-10 offset-1 showblock" style="text-align: center;">
-			
-				<h1>标签</h1>
-				<div id="tagcloud">
-					<a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/STL/" style="font-size: 15px;">STL</a>
-				</div>
-			
-		</div>
-	</div>
+			<div id="words" class="animated fadeInDown" onclick="playmusic()">Good Day!Sinksky</div>
+<div id="siteinfo" class="animated fadeInDown">
+	<span>分类1个</span>
+	<span>标签2个</span>
+	<span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>位</span>
+	<span id="busuanzi_container_site_pv">访问量<span id="busuanzi_value_site_pv"></span>次</span>
 </div>
-<style type="text/css">
-	#tagcloud{
-		margin-top: 5%;
+<audio id="audio"><source src="http://fs.open.kugou.com/bf583254a6deec56513ef51c667134d5/5ccefb1e/G052/M08/08/17/FJQEAFaG6kqAK7_AACZc56lNnZo945.mp3" type="audio/mp3"></audio>
+<script type="text/javascript">
+	var musicflag = false;
+	var audio = document.getElementById("audio");
+	function playmusic(){
+		if(musicflag){
+			audio.pause();
+			musicflag = false;
+		}
+		else{
+			audio.play();
+			musicflag = true;
+		}
 	}
-	#tagcloud>a{
-		line-height: 50px;
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-	a:hover{
-		text-decoration: none;
-	}
-</style>
+</script>
+
 		</div>
 		
 	</main>
