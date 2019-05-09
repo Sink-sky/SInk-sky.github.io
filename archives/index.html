@@ -58,7 +58,35 @@
 	<tbody>
 		
 			<tr>
-				<td style="vertical-align: middle;" scope="row" data-toggle="tooltip" data-placement="top" title>2019.05.07</td>
+				<td style="vertical-align: middle;" scope="row" data-toggle="tooltip" data-placement="top" title="Linux C推荐的编程风格">2019.05.10</td>
+				<td style="vertical-align: middle;"><a href="/2019/05/10/CodingStyle/" style="text-decoration: none;">CodingStyle</a></td>
+				<td style="vertical-align: middle;">
+					
+						
+						<span class="badge badge-light" style="font-weight: 400;font-size: 90%;">
+							Coding
+						</span>
+					
+				</td>
+				<td style="vertical-align: middle;">
+					
+					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
+						Coding	
+					</span>
+					
+					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
+						Linux	
+					</span>
+					
+					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
+						C	
+					</span>
+					
+				</td>
+			</tr>
+		
+			<tr>
+				<td style="vertical-align: middle;" scope="row" data-toggle="tooltip" data-placement="top" title="C++ STL容器的一个小总结">2019.05.07</td>
 				<td style="vertical-align: middle;"><a href="/2019/05/07/C++ STL容器/" style="text-decoration: none;">C++ STL容器</a></td>
 				<td style="vertical-align: middle;">
 					
@@ -71,7 +99,7 @@
 				<td style="vertical-align: middle;">
 					
 					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
-						C++	
+						Cpp	
 					</span>
 					
 					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
@@ -101,8 +129,10 @@
 <script>
 
 	$(document).ready(function() {
+		if($("#words").length > 0){
 			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-			hljs.initHighlightingOnLoad();	
+		}
+		hljs.initHighlightingOnLoad();	
 	})
 	$(".pjax-data").on('pjax:end', function() {
 		if($("#words").length > 0){

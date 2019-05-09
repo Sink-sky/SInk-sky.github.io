@@ -139,8 +139,10 @@
 <script>
 
 	$(document).ready(function() {
+		if($("#words").length > 0){
 			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-			hljs.initHighlightingOnLoad();	
+		}
+		hljs.initHighlightingOnLoad();	
 	})
 	$(".pjax-data").on('pjax:end', function() {
 		if($("#words").length > 0){
