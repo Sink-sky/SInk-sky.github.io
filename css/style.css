@@ -21,6 +21,10 @@ pre {
 .showblock h2 {
   margin-bottom: 1rem;
 }
+.showblock li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 html {
   height: 100%;
 }
