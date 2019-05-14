@@ -42,29 +42,78 @@
 </nav>
 	<main class="pjax-data">
 		<div class="animated fadeInDown">
-			<div id="words" class="animated fadeInDown" onclick="playmusic()">Good Day!Sinksky</div>
-<div id="siteinfo" class="animated fadeInDown">
-	<span>分类3个</span>
-	<span>标签7个</span>
-	<span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>位</span>
-	<span id="busuanzi_container_site_pv">访问量<span id="busuanzi_value_site_pv"></span>次</span>
-</div>
-<audio id="audio"><source src="http://fs.open.kugou.com/bf583254a6deec56513ef51c667134d5/5ccefb1e/G052/M08/08/17/FJQEAFaG6kqAK7_AACZc56lNnZo945.mp3" type="audio/mp3"></audio>
-<script type="text/javascript">
-	var musicflag = false;
-	var audio = document.getElementById("audio");
-	function playmusic(){
-		if(musicflag){
-			audio.pause();
-			musicflag = false;
-		}
-		else{
-			audio.play();
-			musicflag = true;
-		}
-	}
-</script>
+			<div class="container animated fadeIn">
+	<div class="row">
+		<div class="col-md-10 offset-1 showblock">
+			
+				<h1 style="text-align: center;">分类归档</h1>
+				<table class="table table-hover table-bordered" style="text-align: center;margin-top: 1rem">
+	<thead>
+		<tr>
+			<th scope="col" width="10%">时间</th>
+			<th scope="col" width="20%">标题</th>
+			<th scope="col" width="35%">分类</th>
+			<th scope="col" width="35%">标签</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+			<tr>
+				<td style="vertical-align: middle;" scope="row" data-toggle="tooltip" data-placement="top" title>2019.05.14</td>
+				<td style="vertical-align: middle;"><a href="/2019/05/14/Gdb/" style="text-decoration: none;">Gdb</a></td>
+				<td style="vertical-align: middle;">
+					
+						
+						<span class="badge badge-light" style="font-weight: 400;font-size: 90%;">
+							Debug
+						</span>
+					
+				</td>
+				<td style="vertical-align: middle;">
+					
+					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
+						Gdb	
+					</span>
+					
+					<span class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">
+						Debug	
+					</span>
+					
+				</td>
+			</tr>
+		
+	</tbody>
+</table>
 
+<script type="text/javascript">
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip({delay: { "show": 600, "hide": 0 }})
+	})
+</script>
+			
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	.category-list{
+		column-count: 2;
+		column-rule: 2px dashed black;
+		column-gap: 3rem;
+		padding-left: 0px;
+		margin: 2rem;
+	}
+	.category-list-item{
+		margin-bottom: 0.5rem;
+		line-height: 1.5rem;
+	}
+	.category-list-count{
+		margin-left: 0.5rem;
+		font-size: 80%;
+	}
+	.category-list-link:hover{
+		text-decoration: none;
+	}
+</style>
 		</div>
 		
 	</main>

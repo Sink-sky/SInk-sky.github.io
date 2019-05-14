@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+	<title>Sinksky</title>
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.6/styles/kimbie.light.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/pjaxinit.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js@3.4.1/dist/hotkeys.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+</head>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark">
+	<ul id="mainnavbar" class="navbar-nav">
+		<a href="/" class="navbar-brand">Sinksky</a>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/categories">分类</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/tags">标签</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/archives">归档</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/about">关于</a>
+			</li>
+		
+	</ul>
+</nav>
+	<main class="pjax-data">
+		<div class="animated fadeInDown">
+			<div class="container animated fadeIn">
+	<div class="row">
+		<div class="col-md-10 offset-1 showblock">
+			<div class="post-header">
+	<h1 style="text-align: center;">Gdb</h1>
+<!-- 		 -->
+		
+			
+				<div style="font-weight: bold;">分类:</div>
+				
+				
+						
+						<a href="/categories/Debug" class="badge badge-light" style="font-weight: 400;font-size: 90%;">Debug</a>>
+				
+				<span class="badge badge-light" style="font-weight: 400;font-size: 90%;">Gdb</span>
+			
+			
+				<div style="font-weight: bold;">标签:</div>
+				 
+					<a href="/tags/Gdb" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">Gdb</a>
+				 
+					<a href="/tags/Debug" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">Debug</a>
+				
+			
+		
+
+	
+</div>
+<hr style="border-color: #b3d7ff;">
+<div class="post-content">
+	<h2 id="gdb基本命令"><a href="#gdb基本命令" class="headerlink" title="gdb基本命令"></a>gdb基本命令</h2><pre><code class="bash">gcc -g main.c -o main
+</code></pre>
+<p>gcc <code>-g</code>编译选项在可执行文件中加入源代码信息,比如可执行文件中第几条机器指令对应源代码的第几行,配合源代码文件在gdb中进行调试.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">start</td>
+<td style="text-align:center">开始执行程序</td>
+</tr>
+<tr>
+<td style="text-align:center">run(r)</td>
+<td style="text-align:center">从头运行程序</td>
+</tr>
+<tr>
+<td style="text-align:center">print(p)</td>
+<td style="text-align:center">打印表达式</td>
+</tr>
+<tr>
+<td style="text-align:center">display &lt;变量名&gt;</td>
+<td style="text-align:center">每次停止都跟踪查看</td>
+</tr>
+<tr>
+<td style="text-align:center">undisplay &lt;变量名&gt;</td>
+<td style="text-align:center">取消跟踪查看</td>
+</tr>
+<tr>
+<td style="text-align:center">next(n)</td>
+<td style="text-align:center">下一条语句</td>
+</tr>
+<tr>
+<td style="text-align:center">step(s)</td>
+<td style="text-align:center">下一条语句,如有函数调用则进入</td>
+</tr>
+<tr>
+<td style="text-align:center">set var</td>
+<td style="text-align:center">修改变量的值</td>
+</tr>
+<tr>
+<td style="text-align:center">backtrace(bt)</td>
+<td style="text-align:center">查看函数调用栈帧</td>
+</tr>
+<tr>
+<td style="text-align:center">finish</td>
+<td style="text-align:center">运行至跳出当前栈帧</td>
+</tr>
+<tr>
+<td style="text-align:center">frame(f) &lt;帧编号&gt;</td>
+<td style="text-align:center">选择栈帧</td>
+</tr>
+<tr>
+<td style="text-align:center">info(i) locals</td>
+<td style="text-align:center">查看选择栈帧的局部变量</td>
+</tr>
+<tr>
+<td style="text-align:center">list(l) &lt;行号&gt;/&lt;函数名&gt;</td>
+<td style="text-align:center">列出对应位置源代码</td>
+</tr>
+<tr>
+<td style="text-align:center">break(b) &lt;行号&gt;/&lt;函数名&gt;  if</td>
+<td style="text-align:center">在对应位置设置断点或满足条件生效断点</td>
+</tr>
+<tr>
+<td style="text-align:center">continue(c)</td>
+<td style="text-align:center">运行到下个断点</td>
+</tr>
+<tr>
+<td style="text-align:center">delete breakpoints &lt;断点号&gt;</td>
+<td style="text-align:center">删除断点</td>
+</tr>
+<tr>
+<td style="text-align:center">disable breakpoints &lt;断点号&gt;</td>
+<td style="text-align:center">禁用断点</td>
+</tr>
+<tr>
+<td style="text-align:center">enable &lt;断点号&gt;</td>
+<td style="text-align:center">启用断点</td>
+</tr>
+<tr>
+<td style="text-align:center">info(i) breakpoints</td>
+<td style="text-align:center">查看设置的断点</td>
+</tr>
+<tr>
+<td style="text-align:center">watch</td>
+<td style="text-align:center">设置观察点</td>
+</tr>
+<tr>
+<td style="text-align:center">info(i) watchpoints</td>
+<td style="text-align:center">查看设置的观察点</td>
+</tr>
+<tr>
+<td style="text-align:center">x &lt;地址&gt;</td>
+<td style="text-align:center">从某个位置开始打印(eg:x/7b)</td>
+</tr>
+</tbody>
+</table>
+<p>直接回车将使用上次使用的命令.</p>
+<p><strong>如果某个函数的局部变量发生访问越界，有可能并不立即产生段错误，而是在函数返回时产生段错误</strong></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://akaedu.github.io/book/ch10.html" target="_blank" rel="noopener">Linux C一站式编程</a></p>
+
+</div>
+<hr style="border-color: #b3d7ff">
+<div class="post-data" style="text-align: right;"> 
+	最后更新于 2019-05-14
+</div>
+
+		</div>
+	</div>
+</div>
+		</div>
+		
+			<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content" style="border-radius: 15px">
+						<div class="modal-body">
+								<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gdb基本命令"><span class="toc-text">gdb基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				hotkeys("q", function(event,handler){
+					if($(".modal-backdrop").length > 0){
+						$("#exampleModal").modal('hide');
+					}else{
+						$("#exampleModal").modal();
+					}
+				})
+			</script>
+		
+	</main>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/33.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<script>
+
+	$(document).ready(function() {
+		if($("#words").length > 0){
+			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+		}
+		hljs.initHighlightingOnLoad();	
+	})
+	$(".pjax-data").on('pjax:end', function() {
+		if($("#words").length > 0){
+			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+		}
+	})
+	$(document).on('pjax:complete', function() {
+		document.querySelectorAll('pre code').forEach((block) => {
+		hljs.highlightBlock(block);
+		});
+	});
+	hotkeys("w", function(event,handler){
+		if($("#live2d-widget").css('display') != 'none'){
+			$("#live2d-widget").css('display','none');
+		}else{
+			$("#live2d-widget").css('display','block');
+		}
+	})
+	
+	
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+	
+	hotkeys("1,2,3,4,5", function(event,handler){
+		if($('.tooltip').length > 0){
+			$('.tooltip').remove();
+		}
+		switch(handler.key){
+			case "1":$("#mainnavbar a:eq(0)").click();break;
+			
+					case "2":$("#mainnavbar a:eq(1)").click();break;
+				
+			
+					case "3":$("#mainnavbar a:eq(2)").click();break;
+				
+			
+					case "4":$("#mainnavbar a:eq(3)").click();break;
+				
+			
+					case "5":$("#mainnavbar a:eq(4)").click();break;
+				
+			
+		}
+	})
+</script>
