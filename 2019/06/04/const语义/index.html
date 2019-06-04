@@ -50,6 +50,21 @@
 <!-- 		 -->
 		
 			
+				<div style="font-weight: bold;">分类:</div>
+				
+				
+						
+						<a href="/categories/Cpp" class="badge badge-light" style="font-weight: 400;font-size: 90%;">Cpp</a>>
+				
+				<span class="badge badge-light" style="font-weight: 400;font-size: 90%;">const语义</span>
+			
+			
+				<div style="font-weight: bold;">标签:</div>
+				 
+					<a href="/tags/Cpp" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">Cpp</a>
+				 
+					<a href="/tags/C" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">C</a>
+				
 			
 		
 
@@ -57,11 +72,48 @@
 </div>
 <hr style="border-color: #b3d7ff;">
 <div class="post-content">
-	
+	<p>执行一段非法C++代码时出现了问题</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+using namespace std;
+int main(void){
+    const int a = 1;
+    int *p = (int *) &amp;a;
+//    cout &lt;&lt; &quot;Before:\n&quot;;
+//    cout &lt;&lt; p &lt;&lt; &quot; &quot; &lt;&lt; &amp;a &lt;&lt; endl;
+//    cout &lt;&lt; *p &lt;&lt; &quot; &quot; &lt;&lt; a &lt;&lt; endl;
+    *p = 100;
+//    cout &lt;&lt; &quot;After:\n&quot;;
+//    cout &lt;&lt; p &lt;&lt; &quot; &quot; &lt;&lt; &amp;a &lt;&lt; endl;
+//    cout &lt;&lt; *p &lt;&lt; &quot; &quot; &lt;&lt; a &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>输出为：</p>
+<pre><code class="c++">Before:
+0x6ffe44 0x6ffe44
+1 1
+After:
+0x6ffe44 0x6ffe44
+100 1
+</code></pre>
+<p>地址<code>&amp;a</code>和<code>p</code>是相等的，然而<code>a</code>和<code>*p</code>的值却不相同。原因在于C++编译器在编译时会采用一种叫做变量折叠的技术。 </p>
+<blockquote>
+<p>变量折叠：在编译器里进行语法分析的时候，将常量表达式计算求值，并用求得的值来替换表达式，放入常量表。</p>
+</blockquote>
+<p>将上述代码转换为C语言之后,地址相同值不同的问题没有发生.</p>
+<p>查询到这是种编译器优化之后,开启<code>-O0</code>依旧无法避免.</p>
+<p>最后发现是因为C和C++的const实际执行的语义不同而引起的.</p>
+<p>C语言中,const修饰变量将被放在.rodata段中,不代表是个常量,单纯意味着只读,是一种运行时const.</p>
+<p>C++语言中,const修饰变量将在编译时直接将变量引用位置替换成对应常量,相当于具有类型保护的define,是一种编译期const.</p>
+<p>在C和C++中,const变量确实会被上述代码所改变,但是C++在运行时改变const,再次读取的还是编译器符号表中的常量数据.</p>
+<p>解决方法是在变量前加上volatile,volatile告诉编译器每次调用变量都需要从内存重新取值,从而解决问题.</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/misayaaaaa/article/details/69432679" target="_blank" rel="noopener">C++ 常量折叠问题的理解</a></p>
+<p><a href="https://blog.csdn.net/wusuopuBUPT/article/details/18408227" target="_blank" rel="noopener">Variably modified array at file scope</a></p>
+
 </div>
 <hr style="border-color: #b3d7ff">
 <div class="post-data" style="text-align: right;"> 
-	最后更新于 2019-06-03
+	最后更新于 2019-06-04
 </div>
 
 		</div>
@@ -73,7 +125,7 @@
 				<div class="modal-dialog modal-sm" role="document">
 					<div class="modal-content" style="border-radius: 15px">
 						<div class="modal-body">
-								
+								<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
 						</div>
 					</div>
 				</div>
