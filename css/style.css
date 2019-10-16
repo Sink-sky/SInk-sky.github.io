@@ -52,6 +52,9 @@ pre {
 .showblock table:not(.table) tr:nth-child(even) {
   background: #f5fafa;
 }
+.post-content p {
+  line-height: 1.8rem;
+}
 html {
   height: 100%;
 }
