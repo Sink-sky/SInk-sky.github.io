@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+	<title>Sinksky</title>
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.6/styles/kimbie.light.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/pjaxinit.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js@3.4.1/dist/hotkeys.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+</head>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark">
+	<ul id="mainnavbar" class="navbar-nav">
+		<a href="/" class="navbar-brand">Sinksky</a>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/categories">分类</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/tags">标签</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/archives">归档</a>
+			</li>
+		
+			<li class="nav-item">
+				<a class="nav-link pl-3 pr-3" href="/about">关于</a>
+			</li>
+		
+	</ul>
+</nav>
+	<main class="pjax-data">
+		<div class="animated fadeInDown">
+			<div class="container animated fadeIn">
+	<div class="row">
+		<div class="col-md-10 offset-1 showblock">
+			<div class="post-header">
+	<h1 style="text-align: center;">一份初级LinuxC++程序员攻略</h1>
+<!-- 		 -->
+		
+			
+				<div style="font-weight: bold;">分类:</div>
+				
+				
+						
+						<a href="/categories/Coding" class="badge badge-light" style="font-weight: 400;font-size: 90%;">Coding</a>>
+				
+				<span class="badge badge-light" style="font-weight: 400;font-size: 90%;">一份初级LinuxC++程序员攻略</span>
+			
+			
+				<div style="font-weight: bold;">标签:</div>
+				 
+					<a href="/tags/Coding" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">Coding</a>
+				 
+					<a href="/tags/Cpp" class="badge badge-pill badge-light" style="font-weight: 400;font-size: 90%;">Cpp</a>
+				
+			
+		
+
+	
+		<div style="font-weight: bold;">摘要:</div>
+		<div>一份个人认为的攻略</div>
+	
+</div>
+<hr style="border-color: #b3d7ff;">
+<div class="post-content">
+	<h2 id="一份初级LinuxC-程序员攻略"><a href="#一份初级LinuxC-程序员攻略" class="headerlink" title="一份初级LinuxC++程序员攻略"></a>一份初级LinuxC++程序员攻略</h2><p>本文写于2020-08-04,具有一定的时效性以及个人主观局限性,欢迎理性提建议</p>
+<ul>
+<li>坚实的C语言基础</li>
+</ul>
+<p>以C语言为计算机学习的突破口,向上可以学习更抽象的高级编程语言(eg. C++),向下可以学习编译链接,一些底层结构等等(Q:一个C语言程序的生命周期是怎样的?).搞懂各种奇奇怪怪的指针,分清楚传值,传引用(指针).建议使用WSL,搭上VScode的wsl-remote,可以方便熟悉Linux环境以及编译链接,gdb debug等等工具链的使用.</p>
+<p>推荐看视频郭伟的程序设计与算法,看书C Primer Plus,并刷点基础的OJ题</p>
+<ul>
+<li>C++ OOP(面向对象) 模板编程 C++11</li>
+</ul>
+<p>RAII,虚函数虚表,这是C++ OOP的考察重点.C++11中新增了移动构造,移动赋值函数,搞懂移动语义.一次构造对应一次析构.智能指针.模板编程要懂点,是一种编译时多态,STL中广泛使用.需要看懂一点STL.STL中还有内存分配器,最好搞懂一点.各种最佳实践….</p>
+<p>推荐看视频侯捷 博览网的系列,看书C++ Primer(没有Plus!!!),Effective C++系列,深度探索C++对象模型,STL源码解析.</p>
+<ul>
+<li>数据结构与算法</li>
+</ul>
+<p>好好刷题,没有捷径,面试资本.</p>
+<p>有时间看清华大学邓俊辉的数据结构</p>
+<ul>
+<li>操作系统(多线程编程)</li>
+</ul>
+<p>虚拟化(中断,进程线程等等),并发(互斥锁,信号量,条件竞争等等),持久化(数据库,文件系统)</p>
+<p>推荐 操作系统导论 , 英文名Operating Systems: Three Easy Pieces.</p>
+<ul>
+<li>计算机网络(网络编程)</li>
+</ul>
+<p>网络协议模型,TCP,UDP,HTTP,熟悉常用的应用层,传输层,网络层协议.了解QUIP</p>
+<p>推荐书图解TCP/IP</p>
+<ul>
+<li><p>Linux基本操作</p>
+</li>
+<li><p>Unix环境高级编程,Unix网络编程卷1卷2</p>
+</li>
+</ul>
+<p>学习Linux 常用API,套接字,了解进程间通信</p>
+<ul>
+<li>数据库优化</li>
+<li>懂一点常用设计模式</li>
+<li>Google的C++编程风格指南</li>
+</ul>
+<p>以此为中心慢慢学,深入计算机系统学一点底层,学习一门函数式编程语言(Haskell),学习使用一个IDE/编辑器(vim,VS),学习Qt跨平台做客户端,学习编译链接(程序员的自我修养—链接、装载与库),学习C++的历史(C++的设计与进化)</p>
+<p>看!学习C++可以做这么多事情!(然而是个坑)</p>
+</div>
+<hr style="border-color: #b3d7ff">
+<div class="post-data" style="text-align: right;"> 
+	最后更新于 2020-08-04
+</div>
+
+		</div>
+	</div>
+</div>
+		</div>
+		
+			<div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content" style="border-radius: 15px">
+						<div class="modal-body">
+								<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一份初级LinuxC-程序员攻略"><span class="toc-text">一份初级LinuxC++程序员攻略</span></a></li></ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				hotkeys("q", function(event,handler){
+					if($(".modal-backdrop").length > 0){
+						$("#exampleModal").modal('hide');
+					}else{
+						$("#exampleModal").modal();
+					}
+				})
+			</script>
+		
+	</main>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/33.model.json"},"display":{"position":"right","width":200,"height":500},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<script>
+
+	$(document).ready(function() {
+		if($("#words").length > 0){
+			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+		}
+		hljs.initHighlightingOnLoad();	
+	})
+	$(".pjax-data").on('pjax:end', function() {
+		if($("#words").length > 0){
+			$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+		}
+	})
+	$(document).on('pjax:complete', function() {
+		document.querySelectorAll('pre code').forEach((block) => {
+		hljs.highlightBlock(block);
+		});
+	});
+	hotkeys("w", function(event,handler){
+		if($("#live2d-widget").css('display') != 'none'){
+			$("#live2d-widget").css('display','none');
+		}else{
+			$("#live2d-widget").css('display','block');
+		}
+	})
+	
+	
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+	
+	hotkeys("1,2,3,4,5", function(event,handler){
+		if($('.tooltip').length > 0){
+			$('.tooltip').remove();
+		}
+		switch(handler.key){
+			case "1":$("#mainnavbar a:eq(0)").click();break;
+			
+					case "2":$("#mainnavbar a:eq(1)").click();break;
+				
+			
+					case "3":$("#mainnavbar a:eq(2)").click();break;
+				
+			
+					case "4":$("#mainnavbar a:eq(3)").click();break;
+				
+			
+					case "5":$("#mainnavbar a:eq(4)").click();break;
+				
+			
+		}
+	})
+</script>
